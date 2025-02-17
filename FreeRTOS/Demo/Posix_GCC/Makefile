@@ -114,6 +114,10 @@ ifeq ($(USER_DEMO),FULL_DEMO)
   CPPFLAGS            +=   -DUSER_DEMO=1
 endif
 
+ifeq ($(USER_DEMO),PROFILE)
+  CPPFLAGS            +=   -DUSER_DEMO=2
+endif
+
 
 OBJ_FILES = $(SOURCE_FILES:%.c=$(BUILD_DIR)/%.o)
 

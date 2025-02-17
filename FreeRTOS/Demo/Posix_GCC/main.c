@@ -74,6 +74,7 @@
 
 #define    BLINKY_DEMO    0
 #define    FULL_DEMO      1
+#define    PROFILE        2
 
 #ifdef BUILD_DIR
     #define BUILD         BUILD_DIR
@@ -94,6 +95,7 @@
 
 extern void main_blinky( void );
 extern void main_full( void );
+extern void main_profile( void );
 static void traceOnEnter( void );
 
 /*
@@ -177,6 +179,11 @@ int main( void )
     {
         console_print( "Starting full demo\n" );
         main_full();
+    }
+    #elif ( mainSELECTED_APPLICATION == PROFILE )
+    {
+        console_print( "Starting profiling code\n" );
+        main_profile();
     }
     #else
     {
